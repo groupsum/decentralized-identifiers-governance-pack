@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-domain-linkage-is-a-separate-trust-signal",
+  "number": 1104,
+  "slug": "did-domain-linkage-is-a-separate-trust-signal",
+  "title": "DID Domain Linkage Is A Separate Trust Signal",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DID domain linkage is governed as an explicit trust signal that must be validated separately from DID resolution and DID document syntax.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/.well-known/resources/did-configuration/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Context\n\n- Well-Known DID Configuration defines a mechanism for linking DIDs and domains.\n- DID resolution can return a valid DID document without proving control of a DNS domain.\n- Domain linkage can inform trust policy, but it is not equivalent to universal DID ownership or protocol authorization.\n\n## Decision\n\n- DID domain linkage must be governed as a separate trust signal.\n- Domain linkage validation must check the well-known resource, linked DID, credential or proof material, domain binding, and verifier policy.\n- Successful DID resolution is necessary but insufficient for domain linkage claims.\n\n## Consequences\n\n- Tests must include valid, missing, stale, mismatched, malformed, and unsupported domain linkage resources.\n- Documentation must distinguish DID document validation from domain linkage validation.\n- Consumer profiles must state how domain linkage affects trust decisions.\n"
+}

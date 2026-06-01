@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-core-is-the-identifier-document-and-url-authority",
+  "number": 1100,
+  "slug": "did-core-is-the-identifier-document-and-url-authority",
+  "title": "DID Core Is The Identifier Document And URL Authority",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "W3C DID Core is the primary authority for DID syntax, DID URLs, DID documents, verification relationships, services, and controller semantics.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/", "https://www.w3.org/TR/cid/"],
+  "body": "## Context\n\n- DID Core defines the Decentralized Identifier syntax, DID URL syntax, DID document data model, controller semantics, verification methods, verification relationships, and services.\n- Controlled Identifiers defines adjacent terminology and data model concepts relevant to controller and verification material governance.\n- Downstream systems need a single baseline authority before layering DID methods or consuming profiles.\n\n## Decision\n\n- W3C DID Core is the baseline authority for DID identifiers, DID URLs, and DID documents.\n- Controlled Identifiers is treated as an adjacent authority for controlled identifier terminology where downstream profiles use it.\n- DID method specifications may define method-specific syntax, resolution, and lifecycle behavior, but they do not replace the DID Core data model baseline.\n\n## Consequences\n\n- Implementations must validate DID and DID URL syntax before method-specific processing.\n- DID document processing must follow DID Core data model semantics before profile-specific interpretation.\n- Tests should separate DID Core conformance from DID method and consumer-profile behavior.\n"
+}

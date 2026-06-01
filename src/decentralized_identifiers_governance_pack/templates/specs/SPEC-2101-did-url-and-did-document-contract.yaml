@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-url-and-did-document-contract",
+  "number": 2101,
+  "slug": "did-url-and-did-document-contract",
+  "title": "DID URL And DID Document Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-core-is-the-identifier-document-and-url-authority", "adr:did-documents-govern-verification-methods-relationships-and-services"],
+  "summary": "DID URL and DID document processing must govern path, query, fragment, relative reference, verification method dereferencing, and service endpoint handling.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- DID URL processing must handle path, query, and fragment components according to DID Core and method-specific rules.\n- Fragment dereferencing must resolve verification methods or other document resources only when present and valid.\n- Service endpoint processing must validate service id, type, endpoint shape, and profile-specific interpretation where declared.\n- DID URL dereferencing must not treat service endpoint declarations as automatically trusted network destinations.\n\n## Evidence Expectations\n\n- Fixtures for DID URLs with fragments, paths, queries, service references, missing fragments, duplicate ids, malformed service endpoints, and unsupported dereferencing targets.\n"
+}

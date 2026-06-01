@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:well-known-did-configuration-contract",
+  "number": 2108,
+  "slug": "well-known-did-configuration-contract",
+  "title": "Well-Known DID Configuration Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-domain-linkage-is-a-separate-trust-signal"],
+  "summary": "Well-Known DID Configuration support must validate domain linkage resources, linked DID evidence, domain binding, credential or proof verification, and verifier policy separately from DID resolution.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/.well-known/resources/did-configuration/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations claiming well-known DID configuration support must retrieve and validate the declared domain linkage resource.\n- Validation must check resource shape, linked DID, domain binding, proof or credential verification, status where applicable, and verifier policy.\n- DID resolution success must not imply domain linkage success.\n- Missing, stale, malformed, mismatched, or unsupported linkage resources must fail according to policy.\n\n## Evidence Expectations\n\n- Fixtures for valid linkage, wrong domain, wrong DID, invalid proof, missing resource, unsupported credential type, stale resource, and successful DID resolution without domain linkage.\n"
+}

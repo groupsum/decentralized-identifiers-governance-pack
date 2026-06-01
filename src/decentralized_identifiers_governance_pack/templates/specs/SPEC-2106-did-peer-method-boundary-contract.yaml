@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-peer-method-boundary-contract",
+  "number": 2106,
+  "slug": "did-peer-method-boundary-contract",
+  "title": "DID Peer Method Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-method-support-must-be-explicitly-declared", "adr:didcomm-and-trust-establishment-are-adjacent-protocols-not-did-core"],
+  "summary": "did:peer support must be declared as a peer-method boundary with explicit numalgo, document generation, service, DIDComm, and out-of-band handling.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/peer-did-method-spec/", "https://identity.foundation/didcomm-messaging/spec/"],
+  "body": "## Requirements\n\n- Implementations claiming did:peer support must declare supported numalgos and generated document behavior.\n- Service endpoint and DIDComm-related behavior must be declared separately from baseline did:peer parsing.\n- Unsupported numalgos, malformed encodings, unsupported service blocks, and invalid generated documents must fail closed.\n- Peer DID use must be scoped to the declared relationship and protocol profile.\n\n## Evidence Expectations\n\n- Fixtures for each supported numalgo, invalid numalgo, malformed encoded document, service endpoint processing, DIDComm-adjacent service use, and unsupported peer DID variants.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-resolution-and-dereferencing-contract",
+  "number": 2102,
+  "slug": "did-resolution-and-dereferencing-contract",
+  "title": "DID Resolution And Dereferencing Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-resolution-and-dereferencing-are-separate-from-method-lifecycle"],
+  "summary": "DID resolution and dereferencing support must declare resolver inputs, document output, metadata surfaces, error handling, cache behavior, and supported methods separately from lifecycle operations.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://w3c-ccg.github.io/did-resolution/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations must declare supported DID methods for resolution and dereferencing.\n- Resolution output must distinguish DID document, DID resolution metadata, and DID document metadata.\n- Dereferencing output must distinguish content, content metadata, and dereferencing metadata.\n- Error handling must distinguish invalid DID, unsupported method, not found, representation not supported, deactivated, and dereferencing target failure where applicable.\n- Cache, freshness, and remote retrieval behavior must be documented when used.\n\n## Evidence Expectations\n\n- Fixtures for successful resolution, unsupported method, invalid DID, deactivated DID, missing document, fragment dereferencing, service dereferencing, stale cache, and metadata propagation.\n"
+}

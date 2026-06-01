@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-method-registry-and-method-support-contract",
+  "number": 2103,
+  "slug": "did-method-registry-and-method-support-contract",
+  "title": "DID Method Registry And Method Support Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-method-support-must-be-explicitly-declared"],
+  "summary": "DID method support must name supported methods, method specifications, resolution behavior, lifecycle operations, verification material, and unsupported-method handling.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-spec-registries/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations must list supported DID methods by method name.\n- Each method support claim must declare whether parsing, resolution, dereferencing, verification material extraction, service processing, update, or deactivation is supported.\n- Unsupported methods must not be routed to generic best-effort behavior.\n- Method-specific security and privacy considerations must be documented when they affect verifier policy.\n\n## Evidence Expectations\n\n- Fixtures for each supported method and at least one unsupported method.\n- Evidence showing method-specific resolver dispatch, unsupported-method rejection, and separation of parse-only support from resolver support.\n"
+}

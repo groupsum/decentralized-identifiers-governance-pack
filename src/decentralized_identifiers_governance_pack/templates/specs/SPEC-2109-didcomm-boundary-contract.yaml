@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:didcomm-boundary-contract",
+  "number": 2109,
+  "slug": "didcomm-boundary-contract",
+  "title": "DIDComm Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:didcomm-and-trust-establishment-are-adjacent-protocols-not-did-core", "adr:did-documents-govern-verification-methods-relationships-and-services"],
+  "summary": "DIDComm support must be declared as a messaging profile that consumes DID documents and services but adds separate encryption, routing, packaging, and trust requirements.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/didcomm-messaging/spec/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations claiming DIDComm support must declare supported message types, packaging modes, key agreement behavior, routing behavior, service endpoint selection, and trust policy.\n- DID document service parsing must be separated from DIDComm message validation and cryptographic processing.\n- Unsupported service types, missing key agreement material, invalid encrypted messages, unsupported routing, and untrusted counterparties must fail closed.\n\n## Evidence Expectations\n\n- Fixtures for DID documents with DIDComm services, valid encrypted messages, invalid packaging, wrong key agreement relationship, unsupported routing, missing service endpoint, and valid DID document with unsupported DIDComm profile.\n"
+}

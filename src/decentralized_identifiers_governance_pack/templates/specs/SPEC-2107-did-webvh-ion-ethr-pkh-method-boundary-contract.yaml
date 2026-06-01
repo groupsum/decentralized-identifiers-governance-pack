@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-webvh-ion-ethr-pkh-method-boundary-contract",
+  "number": 2107,
+  "slug": "did-webvh-ion-ethr-pkh-method-boundary-contract",
+  "title": "DID WebVH ION ETHR PKH Method Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-method-support-must-be-explicitly-declared", "adr:did-resolution-and-dereferencing-are-separate-from-method-lifecycle"],
+  "summary": "did:webvh, did:ion, did:ethr, and did:pkh support must be declared as method-specific boundary support with explicit resolver, ledger, chain, history, and key-material behavior.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/didwebvh/", "https://identity.foundation/ion/", "https://github.com/uport-project/ethr-did-resolver", "https://github.com/w3c-ccg/did-pkh/blob/main/did-pkh-method-draft.md"],
+  "body": "## Requirements\n\n- Implementations must declare support for did:webvh, did:ion, did:ethr, and did:pkh independently.\n- Method-specific resolution must document required network, ledger, chain, history, key, and cache behavior.\n- Method-specific lifecycle operations must be declared separately from read-time resolution.\n- Unsupported networks, chains, histories, ledgers, method variants, and key encodings must fail closed.\n\n## Evidence Expectations\n\n- Fixtures or mocks for each declared method, including unsupported network or chain, invalid history or ledger state, unavailable resolver resource, malformed method identifier, and valid DID document output.\n"
+}

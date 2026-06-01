@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-resolution-and-dereferencing-are-separate-from-method-lifecycle",
+  "number": 1102,
+  "slug": "did-resolution-and-dereferencing-are-separate-from-method-lifecycle",
+  "title": "DID Resolution And Dereferencing Are Separate From Method Lifecycle",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DID resolution and DID URL dereferencing are governed as read-time processing surfaces separate from method lifecycle operations such as create, update, and deactivate.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/", "https://w3c-ccg.github.io/did-resolution/"],
+  "body": "## Context\n\n- DID Core distinguishes DID documents, DID URLs, fragments, paths, queries, and services.\n- DID Resolution defines resolver and dereferencer outputs and metadata surfaces.\n- DID methods can define lifecycle operations that are not required for all resolvers or verifiers.\n\n## Decision\n\n- DID resolution and DID URL dereferencing are governed as read-time processing surfaces.\n- Method lifecycle operations such as create, update, rotate, and deactivate must be declared separately from resolver support.\n- Resolution metadata, document metadata, dereferencing metadata, and error handling must remain distinct from the resolved DID document.\n\n## Consequences\n\n- A resolver can support read-time DID resolution without implementing method lifecycle operations.\n- Tests must distinguish DID resolution, DID URL dereferencing, and method lifecycle behavior.\n- Error handling must identify unsupported method, invalid DID, not found, deactivated, and dereferencing failure cases separately.\n"
+}

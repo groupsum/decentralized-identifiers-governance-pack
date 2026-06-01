@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-trust-establishment-boundary-contract",
+  "number": 2110,
+  "slug": "did-trust-establishment-boundary-contract",
+  "title": "DID Trust Establishment Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:didcomm-and-trust-establishment-are-adjacent-protocols-not-did-core", "adr:did-use-in-vc-and-openid4vc-is-optional-profile-integration"],
+  "summary": "DID Trust Establishment support must be declared as adjacent trust metadata and policy behavior separate from baseline DID Core, DID method, VC, and OpenID4VC support.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/trust-establishment/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations claiming Trust Establishment support must declare the supported trust metadata, discovery behavior, credential or proof expectations, and verifier policy.\n- Trust Establishment processing must be separated from DID resolution, DID document validation, VC verification, and OpenID4VC protocol validation.\n- Unsupported trust metadata, invalid proofs, missing trust statements, and policy mismatch must fail according to the declared trust policy.\n\n## Evidence Expectations\n\n- Fixtures for valid trust metadata, missing metadata, invalid proof, unsupported trust framework, resolver success with trust failure, and trust success with consumer-profile policy rejection.\n"
+}

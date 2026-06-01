@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-documents-govern-verification-methods-relationships-and-services",
+  "number": 1103,
+  "slug": "did-documents-govern-verification-methods-relationships-and-services",
+  "title": "DID Documents Govern Verification Methods Relationships And Services",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DID documents govern verification methods, verification relationships, controller links, and service endpoints, but do not by themselves grant application authorization.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/"],
+  "body": "## Context\n\n- DID documents can contain verification methods, authentication relationships, assertion methods, key agreement methods, capability relationships, and service endpoints.\n- Consumer protocols use these relationships for different purposes, such as VC issuer verification, holder binding, messaging, or domain linkage.\n- Treating any listed key or service as universally authorized creates incorrect trust assumptions.\n\n## Decision\n\n- DID documents govern verification material and service endpoint declarations according to DID Core semantics.\n- Verification relationships must be checked for the specific proof purpose or consumer profile in use.\n- DID document presence does not by itself grant local authorization, authentication, or trust status.\n\n## Consequences\n\n- Tests must include correct and incorrect verification relationship use.\n- Consumer profiles must name the DID document fields and relationships they rely on.\n- Services must be treated as declared endpoints, not as automatically trusted protocol channels.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-core-data-model-and-syntax-contract",
+  "number": 2100,
+  "slug": "did-core-data-model-and-syntax-contract",
+  "title": "DID Core Data Model And Syntax Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-core-is-the-identifier-document-and-url-authority"],
+  "summary": "DID support must validate DID syntax, DID URL syntax, DID document data model fields, controllers, verification methods, verification relationships, and services according to DID Core.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/"],
+  "body": "## Requirements\n\n- Implementations must validate DID syntax and DID URL syntax before method-specific processing.\n- DID document processing must validate id, controller, alsoKnownAs, verificationMethod, verification relationships, services, and unsupported fields according to the declared processing model.\n- DID Core validation must be separate from method-specific resolution and consumer-profile trust decisions.\n- Unsupported DID syntax, malformed DID URLs, invalid document fields, and unsupported verification material must fail closed or be reported explicitly.\n\n## Evidence Expectations\n\n- Fixtures for valid DIDs, invalid DIDs, valid DID URLs, malformed fragments, valid DID documents, invalid verification relationships, unsupported key material, and service endpoint edge cases.\n"
+}

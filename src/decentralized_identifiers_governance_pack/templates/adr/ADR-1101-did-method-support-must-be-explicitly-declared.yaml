@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-method-support-must-be-explicitly-declared",
+  "number": 1101,
+  "slug": "did-method-support-must-be-explicitly-declared",
+  "title": "DID Method Support Must Be Explicitly Declared",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DID method support is governed as an explicit compatibility claim; baseline DID support must not imply support for every DID method.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/did-core/", "https://www.w3.org/TR/did-spec-registries/"],
+  "body": "## Context\n\n- DID Core defines the generic DID syntax and data model, while DID methods define method-specific creation, resolution, update, deactivation, and security behavior.\n- DID method implementations differ materially across did:web, did:key, did:jwk, did:peer, did:webvh, did:ion, did:ethr, did:pkh, and other methods.\n- Generic DID support claims can mislead downstream users if method support is not named.\n\n## Decision\n\n- DID method support must be explicitly declared by method name and supported operation.\n- Baseline DID Core processing does not imply support for resolving or validating every DID method.\n- Unsupported methods must be rejected or reported as unsupported rather than processed by fallback behavior.\n\n## Consequences\n\n- Release claims must list supported DID methods.\n- Tests must include supported and unsupported method identifiers.\n- Method-specific contracts must name resolution, dereferencing, verification material, service, and lifecycle behavior that is in scope.\n"
+}

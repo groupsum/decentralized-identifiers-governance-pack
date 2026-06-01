@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-key-and-did-jwk-method-contract",
+  "number": 2105,
+  "slug": "did-key-and-did-jwk-method-contract",
+  "title": "DID Key And DID JWK Method Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-method-support-must-be-explicitly-declared", "adr:did-documents-govern-verification-methods-relationships-and-services"],
+  "summary": "did:key and did:jwk support must validate embedded key material, generated DID documents, supported key types, verification relationships, and unsupported-key handling.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://w3c-ccg.github.io/did-method-key/", "https://github.com/quartzjer/did-jwk/blob/main/spec.md"],
+  "body": "## Requirements\n\n- Implementations claiming did:key support must declare supported multicodec key types and generated document behavior.\n- Implementations claiming did:jwk support must declare supported JWK key types, encoding rules, and generated document behavior.\n- Generated verification methods and verification relationships must be valid for the declared consumer profile.\n- Unsupported key types, malformed encoded material, and invalid generated documents must fail closed.\n\n## Evidence Expectations\n\n- Fixtures for supported did:key and did:jwk identifiers, unsupported key type, malformed encoded key, generated DID document validation, and proof-purpose-specific verification relationship checks.\n"
+}

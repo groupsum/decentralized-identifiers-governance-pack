@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:did-use-in-vc-and-openid4vc-is-optional-profile-integration",
+  "number": 1106,
+  "slug": "did-use-in-vc-and-openid4vc-is-optional-profile-integration",
+  "title": "DID Use In VC And OpenID4VC Is Optional Profile Integration",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DID use in VC, Data Integrity, JOSE/COSE, OpenID4VCI, OpenID4VP, and SIOPv2 is governed as optional profile integration, not as baseline DID conformance.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/vc-data-integrity/", "https://www.w3.org/TR/vc-jose-cose/", "https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html", "https://openid.net/specs/openid-4-verifiable-presentations-1_0.html", "https://openid.net/specs/openid-connect-self-issued-v2-1_0.html"],
+  "body": "## Context\n\n- VC and OpenID4VC profiles can use DIDs for issuer identifiers, holder identifiers, verification methods, key discovery, or wallet identifiers.\n- DID Core does not require VC or OpenID4VC support.\n- VC and OpenID4VC profiles can also use identifiers and trust mechanisms that are not DIDs.\n\n## Decision\n\n- DID use in VC and OpenID4VC is optional profile integration.\n- Downstream profiles must explicitly declare which DID methods, verification relationships, and resolution behavior are required for VC or OpenID4VC use.\n- DID verification material must be validated for the proof purpose and profile-specific policy in use.\n\n## Consequences\n\n- DID implementations can conform to baseline DID contracts without implementing VC or OpenID4VC protocols.\n- VC and OpenID4VC tests must separately verify DID integration behavior when declared.\n- Release claims must distinguish DID support from VC, OpenID4VCI, OpenID4VP, and SIOPv2 support.\n"
+}

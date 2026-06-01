@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:did-web-method-contract",
+  "number": 2104,
+  "slug": "did-web-method-contract",
+  "title": "DID Web Method Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:did-method-support-must-be-explicitly-declared", "adr:did-domain-linkage-is-a-separate-trust-signal"],
+  "summary": "did:web support must validate method-specific identifier-to-HTTPS document mapping, retrieval, document id matching, TLS and host constraints, and domain-linkage separation.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://w3c-ccg.github.io/did-method-web/", "https://identity.foundation/.well-known/resources/did-configuration/"],
+  "body": "## Requirements\n\n- Implementations claiming did:web support must map DID method identifiers to HTTPS DID document URLs according to the method specification.\n- Resolution must validate retrieved document syntax and document id matching.\n- Host, path, percent-encoding, port, TLS, redirect, cache, and unavailable-resource behavior must be documented.\n- did:web resolution must remain separate from well-known DID configuration domain linkage validation.\n\n## Evidence Expectations\n\n- Fixtures for root did:web identifiers, path-based identifiers, encoded path segments, wrong document id, unavailable DID document, redirect policy, invalid TLS policy where applicable, and domain linkage present or absent.\n"
+}

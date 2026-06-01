@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:didcomm-and-trust-establishment-are-adjacent-protocols-not-did-core",
+  "number": 1105,
+  "slug": "didcomm-and-trust-establishment-are-adjacent-protocols-not-did-core",
+  "title": "DIDComm And Trust Establishment Are Adjacent Protocols Not DID Core",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DIDComm Messaging and DIF Trust Establishment are adjacent protocols that consume DID material but do not redefine DID Core conformance.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/didcomm-messaging/spec/", "https://identity.foundation/trust-establishment/", "https://www.w3.org/TR/did-core/"],
+  "body": "## Context\n\n- DIDComm Messaging uses DID documents and service endpoints for secure messaging interactions.\n- DIF Trust Establishment can use DID-related trust metadata and discovery behavior.\n- These protocols depend on DID material, but they define additional protocol-specific semantics.\n\n## Decision\n\n- DIDComm and Trust Establishment are governed as adjacent protocols, not as baseline DID Core requirements.\n- Implementations must declare DIDComm or Trust Establishment support separately from DID resolution and DID document processing.\n- Protocol trust decisions must not be inferred from DID Core conformance alone.\n\n## Consequences\n\n- Tests must separate DID document service parsing from DIDComm message processing.\n- Trust Establishment support must name the trust metadata, discovery, and policy behavior it implements.\n- Release claims must avoid implying DIDComm or Trust Establishment support from generic DID support.\n"
+}
