@@ -145,13 +145,15 @@ The script prints `pack:decentralized-identifiers-governance` from the installed
 Source: [examples/usage.py](https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/master/examples/usage.py).
 
 ```python
-"""Resolve and read a packaged specification without synchronizing it."""
+"""Find a specification and its downstream path in the installed manifest."""
 
-from decentralized_identifiers_governance_pack import load_document_manifest, read_packaged_document_text
+from decentralized_identifiers_governance_pack import load_document_manifest
 
-spec = next(row for row in load_document_manifest("spec") if row["id"] == "spc:did-core-data-model-and-syntax-contract")
-document = read_packaged_document_text("spec", spec["filename"])
-assert spec["id"] in document
+specification = next(
+    row for row in load_document_manifest("spec")
+    if row["id"] == "spc:did-core-data-model-and-syntax-contract"
+)
+assert specification["target_path"] == ".ssot/specs/SPEC-2100-did-core-data-model-and-syntax-contract.yaml"
 ```
 <!-- readme-standards:end example.usage -->
 
