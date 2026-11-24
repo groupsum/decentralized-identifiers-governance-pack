@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1.dev2
+
+- Pending release notes.
+
 ## 0.1.1.dev1
 
 - Added initial Decentralized Identifiers governance-pack metadata.
